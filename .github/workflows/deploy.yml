@@ -17,6 +17,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to Firebase
-        run: firebase deploy --token $FIREBASE_TOKEN
-        env:
-          FIREBASE_TOKEN: 1//0gR8MXeh2RH6BCgYIARAAGBASNwF-L9Ir70uE2vB6vqq3xWnL-NnMaIOP-lQhdXiGH5I0jICgyRTVihoDcxVnjVI2AxXXifo-mgM
+        run: firebase deploy --token 1//0gR8MXeh2RH6BCgYIARAAGBASNwF-L9Ir70uE2vB6vqq3xWnL-NnMaIOP-lQhdXiGH5I0jICgyRTVihoDcxVnjVI2AxXXifo-mgM
