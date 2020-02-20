@@ -1,6 +1,6 @@
 {
   "functions": {
-    "predeploy": ["npm --prefix functions run build",
-      "npm predeploy"]
+    "predeploy": ["sudo npm install typescript --save-dev","npm --prefix functions run build"
+      ]
   }
 }
