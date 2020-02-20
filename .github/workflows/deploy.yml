@@ -10,13 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: install firestore
-        uses: npm install -g firebase-tools
+        run: npm install -g firebase-tools
   deploy:
     name: Deploy
     needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to Firebase
-        uses: firebase deploy --token $FIREBASE_TOKEN
+        run: firebase deploy --token $FIREBASE_TOKEN
         env:
           FIREBASE_TOKEN: 1//0gR8MXeh2RH6BCgYIARAAGBASNwF-L9Ir70uE2vB6vqq3xWnL-NnMaIOP-lQhdXiGH5I0jICgyRTVihoDcxVnjVI2AxXXifo-mgM
