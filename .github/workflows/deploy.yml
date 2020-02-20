@@ -1,0 +1,32 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+      - name: change directory
+        run: cd functions
+      - name: Install Dependencies
+        run: npm install
+      - name: install firebase
+        run: npm install firebase-functions@latest firebase-admin@latest --save
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+      - name: Deploy to Firebase
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only functions
+        env:
+          FIREBASE_TOKEN: AAAArvwq670:APA91bExFz8YdqgufLLMXcdZPSgVjBctG-2KkG2_bDs8hphgSJmK0sYAEll4ODRN5kP4goBeiBbuxSJpbUJjVBhW_GjNlDTEPu13R1XYfUwODP1Nk0T87xSH-f7GImsl_Rv-YsePqdnU
