@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: install firestore
-        run: npm install -g firebase-tools
+        run: sudo npm install -g firebase-tools
   deploy:
     name: Deploy
     needs: build
