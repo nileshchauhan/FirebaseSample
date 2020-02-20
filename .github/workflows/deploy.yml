@@ -11,10 +11,14 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@master
-      - name: Install Dependencies
-        run: npm install
       - name: install firebase
         run: npm install firebase-functions@latest firebase-admin@latest --save
+      - name: install firebase-tools
+        run: npm install firebase-tools
+      - name: change directory
+        run: cd functions
+      - name: Install Dependencies
+        run: npm install
   deploy:
     name: Deploy
     needs: build
